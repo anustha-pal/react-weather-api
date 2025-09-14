@@ -11,7 +11,7 @@ jobs:
 
     env:                    
       ACR_NAME: myprojectacrs                
-      AZURE_APP_SERVICE: ReactFrontendApp
+      AZURE_APP_SERVICE: ReactFntApp
       RESOURCE_GROUP: myproject1
 
     steps:
