@@ -5,7 +5,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://devops-practices-cyhgdffnhbafeba9.canadacentral-01.azurewebsites.net/weatherforecast")
+    fetch("https://mydotbackendservice-d5b9ghb6f5e4hddf.canadacentral-01.azurewebsites.net/weatherforecast")
       .then((res) => res.json())
       .then((data) => {
         setForecast(data);
