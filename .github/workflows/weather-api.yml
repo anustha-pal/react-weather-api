@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:                    
-      ACR_NAME: mycontainerss                
+      ACR_NAME: myprojectacrs                
       AZURE_APP_SERVICE: ReactFrontendApp
-      RESOURCE_GROUP: weather-api-resources
+      RESOURCE_GROUP: myproject1
 
     steps:
       - name: Checkout repository
@@ -31,16 +31,16 @@ jobs:
 
      
       - name: Build Docker Image
-        run: docker build -t mycontainerss.azurecr.io/weather-image:latest .
+        run: docker build -t myprojectacrs.azurecr.io/weather-image:latest .
 
       - name: Log in to ACR
-        run: az acr login --name mycontainerss
+        run: az acr login --name myprojectacrs
 
       - name: Push Docker Image
-        run: docker push mycontainerss.azurecr.io/weather-image:latest
+        run: docker push myprojectacrs.azurecr.io/weather-image:latest
 
       - name: Deploy to Azure App Service (Container)
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_APP_SERVICE }}
-          images: mycontainerss.azurecr.io/weather-image:latest
+          images: myprojectacrs.azurecr.io/weather-image:latest
